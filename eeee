@@ -1,0 +1,20 @@
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/miroeramaa/TurtleLib/main/TurtleUiLib.lua"))()
+
+
+local window = library:Window("Stand Upright:R | By heber")
+
+
+window:Label("Items", Color3.fromRGB(127, 143, 166))
+
+window:Button("Autofarm", function()
+
+    while wait(1) do
+  for i, v in pairs(game.Workspace.Items:GetDescendants()) do
+      if v:IsA("TouchTransmitter") then
+          firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 0)
+          wait()
+          firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 1)
+end
+end
+end
+end)
